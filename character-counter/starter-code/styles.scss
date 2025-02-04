@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+$neutral-900: #12131a;
+$neutral-800: #21222C;
+$neutral-700: #2a2b37;
+$neutral-500: #e4e4ef;
+$neutral-400: #f2f2e7;
+$neutral-200: #e4e4ef;
+$neutral-100: #f2f2f7;
+$neutral-0: #ffffff;
+
+$blue-400: #d3e0fa;
+$blue-500: #c27cf8;
+
+$yellow-500: #ff9f00;
+
+$orange-500: #fe8159;
+$orange-800: #fe8159;
+
+@mixin text-preset-1(){
+    font-family: "DM Sans", serif;
+    font-size: 64px;
+    line-height: 1;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+@mixin text-preset-1-mobile(){
+    font-family: "DM Sans", serif;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+@mixin text-preset-2(){
+    font-family: "DM Sans", serif;
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: -1px;
+    font-weight: 600;
+}
+
+@mixin text-preset-3(){
+    font-family: "DM Sans", serif;
+    font-size: 20px;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+    font-weight: 400;
+}
+
+@mixin text-preset-4(){
+    font-family: "DM Sans", serif;
+    font-size: 16px;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+    font-weight: 400;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $neutral-900;
+
+    &.light-mode{
+        background-color: $neutral-0;
+
+        .app__container{
+            color: $neutral-900;
+
+                header{
+
+                    .theme-toggle{
+                        background: $neutral-100;
+                    }
+                }
+
+                .input-wrapper{
+
+                    #text-input{
+                        background-color: $neutral-100;
+                        border: 2px solid $neutral-200;
+                        color: $neutral-700;
+                    }
+
+                    .checkbox-container{
+    
+                        .checkbox-wrapper{
+        
+                            div{
+        
+                                input[type="checkbox"]{
+                                    border: 1px solid $neutral-900;
+        
+                                }
+    
+                                input[type="number"]{
+        
+                                    border: 1px solid $neutral-900;
+                                }
+    
+                            }
+                        }
+                    }
+                }
+                .result-wrapper{
+
+                    .letter-density__wrapper{
+                        &.visible {
+                           
+
+                            .letter-density{
+
+                                .single-letter {
+
+                                    .scope-stripe{
+                                        background-color: $neutral-100;
+                                    }
+                                }
+                               
+                            } 
+                        }
+                    }
+                }
+           }
+        }
+    }
+
+    .app__container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 32px 0px;
+        color: $neutral-500;
+    
+        .app__content-wrapper{
+            width: 80%;
+            max-width: 990px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+
+            @media screen and (max-width:768px) {
+                width:100%;
+                padding-inline: 32px;
+            }
+
+            @media screen and (max-width: 520px) {
+                padding-inline: 16px;
+            }
+
+    
+            header{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+    
+                .theme-toggle{
+                    background: $neutral-700;
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 8px;         
+                    border: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+    
+            .title-wrapper{
+                @include text-preset-1();
+                text-align: center;
+
+                @media screen and (max-width: 520px) {
+                @include text-preset-1-mobile();
+                }
+            }
+    
+            .input-wrapper{
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+    
+                #text-input{
+                    width: 100%;
+                    height: 200px;
+                    background-color: $neutral-700;
+                    border: none;
+                    border-radius: 12px;
+                    padding: 20px;
+                    color: $neutral-500;
+                    @include text-preset-3();
+    
+                    &:focus{
+                        outline: none;
+                        border: 2px solid $blue-500;
+                        box-shadow: 0px 0px 10px $blue-500;
+                    }
+                    &.invalid{
+                        border: 2px solid $orange-800;
+                        box-shadow: 0px 0px 10px $orange-800;
+                    }
+                }
+                #text-input::-webkit-scrollbar{
+                    display: none;
+                }
+                .warning{
+                    display: none;
+    
+                    &.visible{
+                        display: flex;
+                        @include text-preset-4();
+                        gap: 8px;
+                        color: $orange-800;
+                    }
+                }
+    
+                .checkbox-container{
+                    display: flex;
+                    justify-content: space-between;
+                    @include text-preset-4();
+    
+                    .checkbox-wrapper{
+                        display: flex;
+                        gap: 24px;
+
+                        @media screen and (max-width: 768px) {
+                            flex-direction: column;
+                            gap: 16px;
+                        }
+    
+                        div{
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+    
+                            input[type="checkbox"]{
+                                width: 16px;
+                                height: 16px;
+                                border-radius: 8px;
+                                appearance: none;
+                                border: 1px solid $neutral-0;
+                                border-radius: 4px;
+                                cursor: pointer;
+                                position: relative;
+                                display: inline-block;
+    
+                                &:checked{
+                                    background-color: $blue-500;
+                                    border-color: $blue-500;
+                                }
+    
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    left: 5.5px;
+                                    top: 3px;
+                                    width: 3px;
+                                    height: 6px;
+                                    border: solid $neutral-900;
+                                    border-width: 0 1.5px 1.5px 0;
+                                    transform: rotate(45deg);
+                                    display: none;
+                                }
+                                &:checked::after {
+                                    display: block;
+                                }
+                            }
+                            input[type="number"]{
+                                @include text-preset-4();
+                                padding: 4px 12px;
+                                background: none;
+                                outline: none;
+                                border: 1px solid $neutral-500;
+                                border-radius: 6px;
+                                width: 55px;
+                                color: $neutral-500;
+                                display: none;
+    
+                                &.visible{
+                                    display: inline;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+    
+            .result-wrapper{
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+    
+                .letter-grid{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+
+                    @media screen and (max-width: 520px){
+                        flex-direction:column;
+                        gap:16px
+                    }
+    
+                    .letter-cell{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+                        color: $neutral-900;
+                        width: 32%;
+                        border-radius: 12px;
+
+                        @media screen and (max-width: 520px){
+                            width: 100%;
+                        }
+                        
+    
+                        &:nth-child(1){
+                            background-color: $blue-500;
+                            .letter-cell__content{
+                                background: url("../../character-counter/starter-code/assets/images/pattern-character-count.svg");
+                                padding: 16px;
+                                background-position: right;
+                                background-repeat: no-repeat;
+                            }
+                        }
+                        &:nth-child(2){
+                            background-color: #ff9f00;
+                            overflow: hidden;
+                            .letter-cell__content{
+                                background: url("../../character-counter/starter-code/assets/images/pattern-word-count.svg");
+                                padding: 16px;
+                                background-position: right;
+                                background-repeat: no-repeat;
+                            }
+                        }
+                        &:nth-child(3){
+                            background-color: $orange-800;
+                            .letter-cell__content{
+                                background: url("../../character-counter/starter-code/assets/images/pattern-sentence-count.svg");
+                                padding: 16px;
+                                background-position: right;
+                                background-repeat: no-repeat;
+                            }
+                        }
+    
+    
+                        .count{
+                            @include text-preset-1();
+                            
+                        }
+                        p{
+                            @include text-preset-3()
+                        }
+                    }
+                }
+                .letter-density__wrapper{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+    
+                    h3{
+                        @include text-preset-2();
+                    }
+    
+                    p{
+                        @include text-preset-4();
+    
+                        &.hidden{
+                            display: none;
+                        }
+                    }
+    
+                    .letter-density-wrapper{
+                        display: none;
+    
+    
+                        &.visible{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+    
+                            .letter-density{
+                                display: flex;
+                                flex-direction: column;
+                                gap: 12px;
+                                height: 153px;
+                                overflow-y: hidden;
+            
+                                &.hidden{
+                                    display: none;
+                                }
+            
+                                .single-letter{
+                                    width: 100%;
+                                    justify-content: space-between;
+                                    display: flex;
+                                    gap: 14px;
+                                    align-items: center;
+    
+                                    .letter{
+                                        width: 16px;
+                                    }
+                                    .count{
+                                        display: inline;
+                                        width: 100px;
+                                    }
+            
+                                    .scope-stripe{
+                                        width: 100%;
+                                        height: 12px;
+                                        background-color: $neutral-800;
+                                        border-radius: 999px;
+                                        position: relative;
+            
+                                        .result-stripe{
+                                            width: 50%;
+                                            height: 12px;
+                                            border-radius: 999px;
+                                            background-color: #c27cf8;
+                                            position: absolute;
+                                        }
+    
+                                    }
+                                }
+                            }
+            
+                            button{
+                                background: transparent;
+                                width: max-content;
+                                @include text-preset-3();
+                                color: $neutral-0;
+                                border: none;
+                                cursor: pointer;
+                            }
+                        }
+    
+                       
+                    }
+                    
+                }
+            }
+    
+    
+        }
+    
+        
+    }
+    
+}
+
+
+
+
+
+

@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #12131a;
+}
+body.light-mode {
+  background-color: #ffffff;
+}
+body.light-mode .app__container {
+  color: #12131a;
+}
+body.light-mode .app__container .app__content-wrapper header .theme-toggle {
+  background: #f2f2f7;
+}
+body.light-mode .app__container .app__content-wrapper .input-wrapper #text-input {
+  background-color: #f2f2f7;
+  border: 2px solid #e4e4ef;
+  color: #2a2b37;
+}
+body.light-mode .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper div input[type=checkbox] {
+  border: 1px solid #12131a;
+}
+body.light-mode .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper div input[type=number] {
+  border: 1px solid #12131a;
+}
+body.light-mode .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper.visible .letter-density .single-letter .scope-stripe {
+  background-color: #f2f2f7;
+}
+body .app__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0px;
+  color: #e4e4ef;
+}
+body .app__container .app__content-wrapper {
+  width: 80%;
+  max-width: 990px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+@media screen and (max-width: 768px) {
+  body .app__container .app__content-wrapper {
+    width: 100%;
+    padding-inline: 32px;
+  }
+}
+@media screen and (max-width: 520px) {
+  body .app__container .app__content-wrapper {
+    padding-inline: 16px;
+  }
+}
+body .app__container .app__content-wrapper header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+body .app__container .app__content-wrapper header .theme-toggle {
+  background: #2a2b37;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .app__container .app__content-wrapper .title-wrapper {
+  font-family: "DM Sans", serif;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-weight: 700;
+  text-align: center;
+}
+@media screen and (max-width: 520px) {
+  body .app__container .app__content-wrapper .title-wrapper {
+    font-family: "DM Sans", serif;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -1px;
+    font-weight: 700;
+  }
+}
+body .app__container .app__content-wrapper .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+body .app__container .app__content-wrapper .input-wrapper #text-input {
+  width: 100%;
+  height: 200px;
+  background-color: #2a2b37;
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  color: #e4e4ef;
+  font-family: "DM Sans", serif;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  font-weight: 400;
+}
+body .app__container .app__content-wrapper .input-wrapper #text-input:focus {
+  outline: none;
+  border: 2px solid #c27cf8;
+  box-shadow: 0px 0px 10px #c27cf8;
+}
+body .app__container .app__content-wrapper .input-wrapper #text-input.invalid {
+  border: 2px solid #fe8159;
+  box-shadow: 0px 0px 10px #fe8159;
+}
+body .app__container .app__content-wrapper .input-wrapper #text-input::-webkit-scrollbar {
+  display: none;
+}
+body .app__container .app__content-wrapper .input-wrapper .warning {
+  display: none;
+}
+body .app__container .app__content-wrapper .input-wrapper .warning.visible {
+  display: flex;
+  font-family: "DM Sans", serif;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  font-weight: 400;
+  gap: 8px;
+  color: #fe8159;
+}
+body .app__container .app__content-wrapper .input-wrapper .checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: "DM Sans", serif;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  font-weight: 400;
+}
+body .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper {
+  display: flex;
+  gap: 24px;
+}
+@media screen and (max-width: 768px) {
+  body .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+body .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper div input[type=checkbox] {
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+body .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper div input[type=checkbox]:checked {
+  background-color: #c27cf8;
+  border-color: #c27cf8;
+}
+body .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper div input[type=checkbox]::after {
+  content: "";
+  position: absolute;
+  left: 5.5px;
+  top: 3px;
+  width: 3px;
+  height: 6px;
+  border: solid #12131a;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+body .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper div input[type=checkbox]:checked::after {
+  display: block;
+}
+body .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper div input[type=number] {
+  font-family: "DM Sans", serif;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  font-weight: 400;
+  padding: 4px 12px;
+  background: none;
+  outline: none;
+  border: 1px solid #e4e4ef;
+  border-radius: 6px;
+  width: 55px;
+  color: #e4e4ef;
+  display: none;
+}
+body .app__container .app__content-wrapper .input-wrapper .checkbox-container .checkbox-wrapper div input[type=number].visible {
+  display: inline;
+}
+body .app__container .app__content-wrapper .result-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 520px) {
+  body .app__container .app__content-wrapper .result-wrapper .letter-grid {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #12131a;
+  width: 32%;
+  border-radius: 12px;
+}
+@media screen and (max-width: 520px) {
+  body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell {
+    width: 100%;
+  }
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell:nth-child(1) {
+  background-color: #c27cf8;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell:nth-child(1) .letter-cell__content {
+  background: url("../../character-counter/starter-code/assets/images/pattern-character-count.svg");
+  padding: 16px;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell:nth-child(2) {
+  background-color: #ff9f00;
+  overflow: hidden;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell:nth-child(2) .letter-cell__content {
+  background: url("../../character-counter/starter-code/assets/images/pattern-word-count.svg");
+  padding: 16px;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell:nth-child(3) {
+  background-color: #fe8159;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell:nth-child(3) .letter-cell__content {
+  background: url("../../character-counter/starter-code/assets/images/pattern-sentence-count.svg");
+  padding: 16px;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell .count {
+  font-family: "DM Sans", serif;
+  font-size: 64px;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-grid .letter-cell p {
+  font-family: "DM Sans", serif;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  font-weight: 400;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper h3 {
+  font-family: "DM Sans", serif;
+  font-size: 24px;
+  line-height: 1.3;
+  letter-spacing: -1px;
+  font-weight: 600;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper p {
+  font-family: "DM Sans", serif;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  font-weight: 400;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper p.hidden {
+  display: none;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper {
+  display: none;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper.visible {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper.visible .letter-density {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 153px;
+  overflow-y: hidden;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper.visible .letter-density.hidden {
+  display: none;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper.visible .letter-density .single-letter {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper.visible .letter-density .single-letter .letter {
+  width: 16px;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper.visible .letter-density .single-letter .count {
+  display: inline;
+  width: 100px;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper.visible .letter-density .single-letter .scope-stripe {
+  width: 100%;
+  height: 12px;
+  background-color: #21222C;
+  border-radius: 999px;
+  position: relative;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper.visible .letter-density .single-letter .scope-stripe .result-stripe {
+  width: 50%;
+  height: 12px;
+  border-radius: 999px;
+  background-color: #c27cf8;
+  position: absolute;
+}
+body .app__container .app__content-wrapper .result-wrapper .letter-density__wrapper .letter-density-wrapper.visible button {
+  background: transparent;
+  width: -moz-max-content;
+  width: max-content;
+  font-family: "DM Sans", serif;
+  font-size: 20px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  font-weight: 400;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}/*# sourceMappingURL=styles.css.map */

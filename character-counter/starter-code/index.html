@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Character counter</title>
+  <link rel="stylesheet" href="../../dist/css/styles.css">
+</head>
+<body class="">
+  <div class="app__container">
+    <div class="app__content-wrapper">
+
+      <header>
+        <img src="./assets/images/logo-dark-theme.svg" alt="logo image" id="logo-img">
+        <button class="theme-toggle dark">
+          <img src="./assets/images/icon-sun.svg" alt="moon icon">
+        </button>
+      </header>
+
+      <div class="title-wrapper">
+        <h1>Analyze your text in real-time</h1>
+      </div>
+
+      <div class="input-wrapper">
+        <textarea name="text-input" id="text-input" placeholder="Start typying here... (or paste your text)" class=""></textarea>
+        <div class="warning">
+          <img src="./assets/images/icon-info.svg" alt="info img">
+          <p>Limit reached! Your text exceeds <span class="limit"></span> characters.</p>
+        </div>
+        <div class="checkbox-container">
+          <div class="checkbox-wrapper">
+            <div>
+              <input type="checkbox" id="exclude-spaces" name="exclude-spaces">
+              <label for="exclude-spaces">Exclude spaces</label>
+            </div>
+            
+            <div>
+              <input type="checkbox" id="char-limit" name="char-limit">
+              <label for="char-limit">Set character limit</label>
+              <input type="number" id="text-limit" class="">
+            </div>
+          </div>
+          <p>Approx. reading time: &lt1 minute</p>
+        </div>
+      </div>
+
+      <div class="result-wrapper">
+
+        <div class="letter-grid">
+          <div class="letter-cell">
+            <div class="letter-cell__content">
+              <h1 class="count" id="char-count">00</h1>
+              <p>Total Characters</p>
+            </div>
+          </div>
+          <div class="letter-cell">
+            <div class="letter-cell__content">
+              <h1 class="count" id="word-count">00</h1>
+              <p>Word Count</p>
+            </div>
+          </div>
+          <div class="letter-cell">
+            <div class="letter-cell__content">
+              <h1 class="count" id="sent-count">00</h1>
+              <p>Sentence Count</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="letter-density__wrapper">
+          <h3>Letter Density</h3>
+          <p class="not-found">No characters found. Start typing to see density.</p>
+
+          <div class="letter-density-wrapper">
+            <div class="letter-density">
+           
+            </div>
+  
+            <button class="expand-btn expand">See more <img src="./assets/images/expand.png" alt="arrow down"></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
